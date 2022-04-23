@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+  <head>
+    <meta name="viewport" content="width=div" initial scale="1.0">
+    <title>test your carbon personaity!</title>
+    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/YqHNKqPq/Untitled.png">
+  </head>
+  <body id="body">
+    <div class="container" id="demo">
+      <br>
+      <img src="https://i.postimg.cc/Fsc1gyFT/intro-tree.png" id="introtree">
+      <p id="questionmark">Find out your carbon-personality!</p>
+      <p id="intdescription">what type of carbon personality are you? lets find out toghether!</p>
+      <button id="letsgo" onclick="nextpage()">go!</button>
+      <br>
+      <br>
+      <br>
+    </div>
+
+    <div id="share">
+      
+    </div>
+    
+    <script>
+      function nextpage(){
+    document.getElementById("demo").innerHTML= `<br><p id="prolotitle"><b>Prologue: orgin</b></p>
+    <p id="prolodescription"> (scrool down if needed) The climate change occurs because of green house effect. Our atmosphere traps heat from sun. However, when human begin to pollute greenhouse gas, the atmosphere absorbs more heat and make the world warmer. This change in temperature will lead to climate change.</p>
+    <p id="prolodescription">However, by minimizing and monitoring our carbon footprint, we can slowdown cand stabalize limate change.
+
+Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhouse gas you produce. By monitoring it, you can know better about how can you reduce your carbon footprint.!</p>
+    <br>
+    <button class="nextgreenbutton" onclick="realgame()">➜</button>
+    <br>
+    <br>
+    <br>
+    `}
+    
+
+      function realgame(){
+        document.getElementById("demo").innerHTML= `
+        <br>
+        <h1 id="questiontitle">Q1</h1>
+        <p id="questiondescription">Random question</p>
+        <form>
+            <input type="text" placeholder="random description" id="answerinput"></input>
+            <button id="nextbutton" onclick="nextquestion()">done</button>
+            <br>
+            <br>
+          </form>
+        <br>
+        <br>
+        <br>
+        <br>`
+        document.getElementById('demo').style.marginTop="30vh";
+      }
+      
+      var stop = 33
+      var second = 5
+      function nextquestion(){
+        /*we need some animation here*/
+        document.getElementById("demo").innerHTML= `
+        <ul id="loadingcontainer">
+          <li class="loadingcircles"></li>
+          &nbsp
+          <li class="loadingcircles"></li>
+          &nbsp
+          <li class="loadingcircles"></li>
+          &nbsp
+        </ul>`
+        document.getElementById("demo").style.backgroundColor="rgb(238, 246, 239)"
+        document.getElementById("demo").style.boxShadow="none"
+          var time = setInterval(
+            function animation(){
+              second = second - 1
+
+              
+              if (second <= 0){
+                document.getElementById("demo").style.backgroundColor="white"
+                document.getElementById("demo").style.marginTop ="20vh"
+                document.getElementById('demo').style.paddingBottom="10vh"
+        document.getElementById("demo").style.boxShadow="0px 0px 29px 0px rgb(0, 0, 0,0.1)"
+                document.getElementById("demo").innerHTML= `
+          <img id="resultimage" src="https://i.postimg.cc/dQXVNg3X/mama-and-ashley.png">
+          <h3 id="finalresult">your result is <b>personality</b></h3>
+          <p id="resultdescription">a random description is like thisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <button class="resultnextbutton" onclick="thetippage()">➜</button>
+            `
+                clearInterval(time)
+              }
+            }
+          ,1000)
+      }
+
+      function thetippage(){
+        document.getElementById("demo").innerHTML=`
+        <br>
+        <br>
+        <h3 id="tiptitle" style="text-align:center;">tips</h3>
+        <p id="tipdescription" style="text-align:center;margin-left:2vw;margin-right:2vw;">according to your carbon footprint, we reccomend you to</p>
+        <ul style="margin-left:2vw;">
+          <li>tip 1</li>
+          <li>tip 2</li>
+          <li>tip 3</li>
+        </ul>`
+      }
+    </script>
+
+
+    <style>
+      body{
+    background-color: rgb(238, 246, 239);
+    color:black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .container{
+    width:50vw;
+    background-color: rgb(255, 255, 255);
+    margin-left: 25vw;
+    border-radius: 5%;
+    box-shadow: 0px 0px 29px 0px rgb(0, 0, 0,0.1);
+    margin-top: 17.5vh;
+}
+
+#resultdescription{
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 1wh;
+}
+
+    #resultimage{
+     display: block;
+     width:10vw;
+     height:10vw;
+     margin-left:auto;
+     margin-right: auto;
+    }
+
+    #loadingcontainer{
+      position: absolute;
+      left: 47%;
+      top:40%;
+      transform:rotate(90deg);
+      padding-bottom: 5px;
+    }
+
+.loadingcircles{
+  list-style: none;
+  width:15px;
+  height:15px;
+  border-radius: 100%;
+  background-color: aquamarine;
+  animation:loadinganimation 1.4s linear infinite;
+  margin-block-start: 0%;
+}
+
+@keyframes loadinganimation{
+  0%{
+    transform:translateX(0);
+  }
+
+  60%{
+    transform:translateX(0);
+  }
+
+  80%{
+    transform:translateX(-10px);
+  }
+}
+
+ul li:nth-child(1){
+  animation-delay: 0s;
+}
+
+ul li:nth-child(2){
+  animation-delay: 0.2s;
+}
+
+ul li:nth-child(3){
+  animation-delay: 0.4s;
+}
+
+#questiontitle{
+  text-align: center;
+}
+
+#finalresult{
+  text-align: center;
+}
+
+.resultnextbutton{
+  float: right;
+  height:40px;
+  width:40px;
+  margin-top: 50px;
+  background: aquamarine;
+  border:0;
+  border-radius: 100px;
+}
+
+.resultnextbutton:hover{
+  float: right;
+  height:40px;
+  width:40px;
+  margin-top: 50px;
+  background: rgb(95, 194, 161);
+  border:0;
+  border-radius: 100px;
+}
+
+#nextbutton{
+  float: right;
+  height:4vh;
+  width:6vh;
+  margin-right: 5vw;
+  margin-top: 3vh;
+  background: aquamarine;
+  border:0;
+  border-radius: 5px;
+}
+
+#nextbutton:hover{
+  float: right;
+  margin-right: 5vw;
+  margin-top: 3vh;
+  background: rgb(109, 217, 181);
+}
+
+#answerinput{
+  margin-left: 5vw;
+  margin-right: 5vw;
+  width:40vw;
+  border-radius: 24px;
+  border: 2px aquamarine solid;
+  padding: 3px 2px;
+}
+
+#questiondescription{
+  margin-left: 2vw;
+  text-align: center;
+}
+
+.nextgreenbutton{
+    background: aquamarine;
+    border:none;
+    width:5vh;
+    height:5vh;
+    position:relative;
+    color:rgb(255, 255, 255);
+    border-radius: 100%;
+    float: right;
+    margin-right: 3vw;
+}
+
+.nextgreenbutton:hover{
+    background:rgb(99, 198, 165);
+    border:none;
+    width:5vh;
+    height:5vh;
+    position:relative;
+    color:rgb(255, 255, 255);
+    border-radius: 100%;  
+}
+
+#prolotitle{
+   text-align: center;
+   margin-top: 10vh;
+}
+
+#questionmark{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 2vh;
+}
+
+#prolodescription{
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#introtree{
+    width:10vh;
+    height:14vh;
+    margin-left:43%;
+    margin-top: 12vh;
+}
+
+#intdescription{
+    text-align: center;
+    margin-top: -2vh;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+#letsgo{
+    border:0;
+    border-radius: 5px;
+    height:5vh;
+    width:10vh;
+    background-color:aquamarine;
+    margin-left: 43%;
+    margin-top: 2%;
+}
+
+#letsgo:hover{
+    border:0;
+    border-radius: 5px;
+    height:5vh;
+    width:10vh;
+    background-color:rgb(103, 208, 173);
+    margin-left: 43%;
+    margin-top: 2%;   
+}
+    </style>
+  </body>
+</html>
