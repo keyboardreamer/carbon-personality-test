@@ -2,8 +2,8 @@
   <head>
     <meta name="viewport" content="width=div" initial scale="1.0">
     <title>test your carbon personaity!</title>
-    <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/YqHNKqPq/Untitled.png">
   </head>
+  <script src="https://kit.fontawesome.com/96231852ed.js" crossorigin="anonymous"></script>
   <body id="body">
     <div class="container" id="demo">
       <br>
@@ -17,10 +17,19 @@
     </div>
 
     <div id="share">
-      
+      <button id="sharetwitter" onclick="location.href='https://twitter.com/intent/tweet?url=https%3A%2F%2Fkeyboardreamer.github.io%2Fcarbon-personality-test%2F'";>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </button>
+      <button id="sharefacebook" onclick="location.href='https://www.facebook.com/sharer/sharer.php?u=https://keyboardreamer.github.io/carbon-personality-test&quote=Awesome%20Blog!'";>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </button>
+      <button id="sharewhatsapp" onclick="location.href='https://wa.me/?text=this%20website%20is%20cool%20https%3A%2F%2Fkeyboardreamer.github.io%2Fcarbon-personality-test%2F'";>
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </button>
     </div>
     
     <script>
+
       function nextpage(){
     document.getElementById("demo").innerHTML= `<br><p id="prolotitle"><b>Prologue: orgin</b></p>
     <p id="prolodescription"> (scrool down if needed) The climate change occurs because of green house effect. Our atmosphere traps heat from sun. However, when human begin to pollute greenhouse gas, the atmosphere absorbs more heat and make the world warmer. This change in temperature will lead to climate change.</p>
@@ -119,6 +128,30 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
     border-radius: 5%;
     box-shadow: 0px 0px 29px 0px rgb(0, 0, 0,0.1);
     margin-top: 17.5vh;
+}
+
+#sharetwitter{
+  border:0;
+  background: none;
+  position: absolute;
+  bottom: 5%;
+  right:50px;
+}
+
+#sharefacebook{
+  border:0;
+  background: none;
+  position: absolute;
+  bottom: 5%;
+  right:80px;
+}
+
+#sharewhatsapp{
+  border:0;
+  background:none;
+  position: absolute;
+  bottom: 5%;
+  right:110px;
 }
 
 #resultdescription{
