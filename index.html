@@ -27,7 +27,17 @@
         <i class="fa fa-whatsapp" aria-hidden="true"></i>
       </button>
     </div>
+
     
+
+
+
+
+
+
+
+
+
     <script>
 
       function nextpage(){
@@ -42,15 +52,22 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
     <br>
     <br>
     `}
-    
 
-      function realgame(){
+
+
+
+
+
+    var currentquestion = 0
+    const questions = ["what is your electric usage", "what is your water usage","what is your transportation usage"]
+    function realgame(){
+        document.getElementById('demo').style.marginTop="30vh";
         document.getElementById("demo").innerHTML= `
         <br>
         <h1 id="questiontitle">Q1</h1>
         <p id="questiondescription">Random question</p>
         <form>
-            <input type="text" placeholder="random description" id="answerinput"></input>
+            <input type="number" placeholder="random description" id="answerinput"></input>
             <button id="nextbutton" onclick="nextquestion()">done</button>
             <br>
             <br>
@@ -59,13 +76,41 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
         <br>
         <br>
         <br>`
-        document.getElementById('demo').style.marginTop="30vh";
+
+        document.getElementById('questiondescription').innerHTML = questions[0]
+        document.getElementById('questiontitle').innerHTML = "Q1"
+
       }
+
       
-      var stop = 33
+
+
+
+
       var second = 5
       function nextquestion(){
         /*we need some animation here*/
+        document.getElementById("demo").innerHTML= `
+        <br>
+        <h1 id="questiontitle">Q1</h1>
+        <p id="questiondescription">Random question</p>
+        <form>
+            <input type="number" placeholder="random description" id="answerinput"></input>
+            <button id="nextbutton" onclick="nextquestion()">done</button>
+            <br>
+            <br>
+          </form>
+        <br>
+        <br>
+        <br>
+        <br>`
+
+        currentquestion = currentquestion + 1
+        document.getElementById('questiondescription').innerHTML = questions[currentquestion]
+        document.getElementById('questiontitle').innerHTML = "Q" + (currentquestion+1)
+
+
+        if (currentquestion >= 3){
         document.getElementById("demo").innerHTML= `
         <ul id="loadingcontainer">
           <li class="loadingcircles"></li>
@@ -97,7 +142,12 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
               }
             }
           ,1000)
-      }
+      }          
+        }
+
+
+
+
 
       function thetippage(){
         document.getElementById("demo").innerHTML=`
@@ -110,20 +160,29 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
           <li>tip 2</li>
           <li>tip 3</li>
         </ul>`
+        document.getElementById('demo').style.marginTop="30vh";
       }
     </script>
 
 
+
+
+
+
+
+
+
+
     <style>
       body{
-    background-color: rgb(238, 246, 239);
+    background-image: linear-gradient(90deg, rgba(220,255,222,1) 17%, rgb(201, 229, 204) 100%);
     color:black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     .container{
     width:50vw;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255,0.8);
     margin-left: 25vw;
     border-radius: 5%;
     box-shadow: 0px 0px 29px 0px rgb(0, 0, 0,0.1);
