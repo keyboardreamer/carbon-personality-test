@@ -2,7 +2,6 @@
   <head>
     <meta name="viewport" content="width=div" initial scale="1.0">
     <title>test your carbon personaity!</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/2j45LnVT/themoonlogo.png">
   </head>
   <script src="https://kit.fontawesome.com/96231852ed.js" crossorigin="anonymous"></script>
   <body id="body">
@@ -72,15 +71,16 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
 
     var electricUsage = 33
     var currentquestion = 0
-    const questions = ["what is your electric usage last month", "what is your energy usage last month","how many hour did you traveled last month"]
-    const description = ["please type in kwh","please use litter as unit","please use hour as unit"]
+    const questions = ["what is your electric usage last month", "what is your energy usage last month","how many hour did you traveled (by plane) last month","how much water did you consume this month"]
+    const description = ["please type in kwh","please use litter as unit","please use hour as unit","please use m3 as unit"]
     function realgame(){
         document.getElementById('demo').style.marginTop="30vh";
         document.getElementById("demo").innerHTML= `
         <br>
         <h1 id="questiontitle">Q1</h1>
         <p id="questiondescription">Random question</p>
-        <form>
+        <form >
+            <div id="selection"></div>
             <input type="number" placeholder="random description" id="answerinput"></input>
             <input id="nextbutton" onclick="nextquestion()" type="button" value="done">
             <br>
@@ -91,6 +91,11 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
         <br>
         <br>`
 
+        document.getElementById("selection").innerHTML += `<select name="cars" id="fueltype">
+                <option value="Natural gas">Natural gas</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Coal">Coal</option>
+           </select>`
         document.getElementById('questiondescription').innerHTML = questions[0]
         document.getElementById('questiontitle').innerHTML = "Q1"
         document.getElementById('answerinput').placeholder = description[currentquestion]
@@ -104,13 +109,24 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
       var energyType = 0
       var travelUsage = 0
       var second = 5
+      var waterUsage = 0
       function nextquestion(){
         
         if (currentquestion == 0){
           electricUsage = document.getElementById('answerinput').value
+          fuelType = document.getElementById('fueltype').value
           console.log("electric usage is " + electricUsage)
-          carbonFootprint += electricUsage * 0.785
-          console.log("carbon footprint is" + carbonFootprint)
+          console.log("electric type is " + fuelType)
+          if (fuelType == "Petrol"){
+               carbonFootprint += electricUsage * 0.96
+               console.log("carbon footprint is" + carbonFootprint)
+         }else if (fuelType == "Coal"){
+               carbonFootprint += electricUsage * 1.01
+               console.log("carbon footprint is" + carbonFootprint)
+             }else if (fuelType == "Natural gas"){
+              carbonFootprint += electricUsage * 0.75
+               console.log("carbon footprint is" + carbonFootprint)
+             }            
         } else if (currentquestion == 1){
           energyUsage = document.getElementById('answerinput').value
           console.log("energy usage is " + energyUsage)
@@ -133,10 +149,15 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
                console.log("carbon footprint is" + carbonFootprint)                   
              }
         } else if (currentquestion == 2){
-          travelUsage = document.getElementById('answerinput').value
-              carbonFootprint += travelUsage * 90 
+          planeUsage = document.getElementById('answerinput').value
+              carbonFootprint += planeUsage * 90 
               console.log("carbon footprint is" + carbonFootprint)       
+             }else if(currentquestion == 3){
+              waterUsage = document.getElementById('answerinput').value
+              carbonFootprint += waterUsage * 4
+              console.log("carbon footprint is" + carbonFootprint) 
              }
+
 
   
 
@@ -149,7 +170,6 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
         <form>
             <div id="selection">
             </div>
-            <br>
             <input type="number" placeholder="random description" id="answerinput"></input>
             <input type="button" id="nextbutton" onclick="nextquestion()" value="done" >
             <br>
@@ -183,9 +203,10 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
 
 
 
+
 //===============================================================================================================================================
 
-if (currentquestion >= 3){
+if (currentquestion >= 4){
        console.log("carbon footprint is " + carbonFootprint/1000 + "tonne")
         document.getElementById("demo").innerHTML= `
         <ul id="loadingcontainer">
@@ -216,18 +237,19 @@ if (currentquestion >= 3){
           <p id="resultdescription">a random description is like thisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           <button class="resultnextbutton" onclick="thetippage()" type="submit">➜</button>
             `
+
              if (carbonFootprint <= 1000){
               document.getElementById("finalresult").innerText = "the carbon master"
               document.getElementById("resultdescription").innerText = `OMG! Your carbon footprint is less than 1 tonne You must live a very enviroment friendly life! Your carbon footprint is way better than the average! Keep it up! Yayy!`
-             } else if (carbonFootprint <= 3500 & carbonFootprint >= 1001){
+             } else if (carbonFootprint <= 3000 & carbonFootprint >= 1001){
               document.getElementById("resultimage").src = "https://i.postimg.cc/NFmktGbd/sword-level.png"
               document.getElementById("finalresult").innerText = "the carbon fighter"
               document.getElementById("resultdescription").innerText = `Cool! Your carbon footprint is ${carbonFootprint/1000},good job! Keep it up!`
-             }else if (carbonFootprint <= 6000 & carbonFootprint >= 3501){
+             }else if (carbonFootprint <= 5000 & carbonFootprint >= 3500){
               document.getElementById("resultimage").src = "https://i.postimg.cc/pdr7H8jk/the-average-star-star.png"
               document.getElementById("finalresult").innerText = "the average"
               document.getElementById("resultdescription").innerText = `Interesting~~ Your carbon footprint is ${carbonFootprint/1000},pretty good, but you can do better!`
-             }else if (carbonFootprint <= 8000 & carbonFootprint >= 6001){
+             }else if (carbonFootprint <= 8000 & carbonFootprint >= 5001){
               document.getElementById("resultimage").src = "https://i.postimg.cc/DZKqg37s/danger.png"
               document.getElementById("finalresult").innerText = "danger zone"
               document.getElementById("resultdescription").innerText = `Hey! Hey! Hey! Your carbon footprint is ${carbonFootprint/1000},you should start to reduce it now!`
@@ -451,6 +473,7 @@ ul li:nth-child(3){
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px aquamarine solid;
   padding: 3px 2px;
+  margin-top: 2vw;
 }
 
 #questiondescription{
@@ -465,6 +488,12 @@ ul li:nth-child(3){
   border: 2px aquamarine solid;
 }
 
+#fueltype{
+  margin-left: 5vw;
+  border-radius: 24px;
+  border: 2px aquamarine solid;
+  margin-top: 3px;
+}
 
 
 .nextgreenbutton{
