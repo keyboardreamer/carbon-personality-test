@@ -241,23 +241,23 @@ if (currentquestion >= 4){
 
              if (carbonFootprint <= 1000){
               document.getElementById("finalresult").innerText = "the carbon master"
-              document.getElementById("resultdescription").innerText = `OMG! Your carbon footprint is less than 1 tonne You must live a very enviroment friendly life! Your carbon footprint is way better than the average! Keep it up! Yayy!`
+              document.getElementById("resultdescription").innerText = `OMG! Your carbon footprint is less than 1 tonne You must live a very enviroment friendly life! Your carbon footprint is way lower than the average! You can try to help people around you to realize the importance of climate action and help them to reduce their carbon footprint.`
              } else if (carbonFootprint <= 3000 & carbonFootprint >= 1001){
               document.getElementById("resultimage").src = "https://i.postimg.cc/NFmktGbd/sword-level.png"
               document.getElementById("finalresult").innerText = "the carbon fighter"
-              document.getElementById("resultdescription").innerText = `Cool! Your carbon footprint is ${carbonFootprint/1000},good job! Keep it up!`
+              document.getElementById("resultdescription").innerText = `Cool! Your carbon footprint is ${carbonFootprint/1000},good job! Keep it up! You can try to change your life habits to reduce your carbon footprint`
              }else if (carbonFootprint <= 5000 & carbonFootprint >= 3500){
               document.getElementById("resultimage").src = "https://i.postimg.cc/pdr7H8jk/the-average-star-star.png"
               document.getElementById("finalresult").innerText = "the average"
-              document.getElementById("resultdescription").innerText = `Interesting~~ Your carbon footprint is ${carbonFootprint/1000},pretty good, but you can do better!`
+              document.getElementById("resultdescription").innerText = `Interesting~~ Your carbon footprint is ${carbonFootprint/1000},pretty good, but you can do better! Try to change your energy source and life habit!`
              }else if (carbonFootprint <= 8000 & carbonFootprint >= 5001){
               document.getElementById("resultimage").src = "https://i.postimg.cc/DZKqg37s/danger.png"
               document.getElementById("finalresult").innerText = "danger zone"
-              document.getElementById("resultdescription").innerText = `Hey! Hey! Hey! Your carbon footprint is ${carbonFootprint/1000},you should start to reduce it now!`
+              document.getElementById("resultdescription").innerText = `Hey! Hey! Hey! Your carbon footprint is ${carbonFootprint/1000},you should start to reduce it now! Try to change your energy source and life habit! `
              }else{
               document.getElementById("resultimage").src = "https://i.postimg.cc/8z9cRdTr/you-too-much.png"
               document.getElementById("finalresult").innerText = "carbon monster"
-              document.getElementById("resultdescription").innerText = `Oof... Your carbon footprint is ${carbonFootprint/1000} tonne,I guess it is too much. Maybe you can follow our tips to reduce carbon footprint :)`
+              document.getElementById("resultdescription").innerText = `Oof... Your carbon footprint is ${carbonFootprint/1000} tonne,I guess it is too much. You should learn about the importance of climate action, reduce the use of transportation and change your energy source`
              }
                 clearInterval(time)
               }
