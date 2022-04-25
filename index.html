@@ -72,7 +72,7 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
     var electricUsage = 33
     var currentquestion = 0
     const questions = ["what is your electric usage last month", "what is your energy usage last month","how many hour did you traveled last month"]
-    const description = ["please type in kwh","please use litter as unit","please use km as unit"]
+    const description = ["please type in kwh","please use litter as unit","please use hour as unit"]
     function realgame(){
         document.getElementById('demo').style.marginTop="30vh";
         document.getElementById("demo").innerHTML= `
@@ -133,9 +133,10 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
              }
         } else if (currentquestion == 2){
           travelUsage = document.getElementById('answerinput').value
-              carbonFootprint = travelUsage * 90 
+              carbonFootprint += travelUsage * 90 
               console.log("carbon footprint is" + carbonFootprint)       
              }
+
   
 
 
@@ -184,6 +185,7 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
 //===============================================================================================================================================
 
 if (currentquestion >= 3){
+       console.log("carbon footprint is " + carbonFootprint/1000 + "tonne")
         document.getElementById("demo").innerHTML= `
         <ul id="loadingcontainer">
           <li class="loadingcircles"></li>
@@ -207,11 +209,32 @@ if (currentquestion >= 3){
                 document.getElementById('demo').style.paddingBottom="10vh"
         document.getElementById("demo").style.boxShadow="0px 0px 29px 0px rgb(0, 0, 0,0.1)"
                 document.getElementById("demo").innerHTML= `
+          <br>
           <img id="resultimage" src="https://i.postimg.cc/dQXVNg3X/mama-and-ashley.png">
-          <h3 id="finalresult">your result is <b>personality</b></h3>
+          <h3 id="finalresult"></h3>
           <p id="resultdescription">a random description is like thisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           <button class="resultnextbutton" onclick="thetippage()" type="submit">➜</button>
             `
+             if (carbonFootprint <= 1000){
+              document.getElementById("finalresult").innerText = "the carbon master"
+              document.getElementById("resultdescription").innerText = `OMG! Your carbon footprint is less than 1 tonne You must live a very enviroment friendly life! Your carbon footprint is way better than the average! Keep it up! Yayy!`
+             } else if (carbonFootprint <= 3500 & carbonFootprint >= 1001){
+              document.getElementById("resultimage").src = "https://i.postimg.cc/NFmktGbd/sword-level.png"
+              document.getElementById("finalresult").innerText = "the carbon fighter"
+              document.getElementById("resultdescription").innerText = `Cool! Your carbon footprint is ${carbonFootprint/1000},good job! Keep it up!`
+             }else if (carbonFootprint <= 6000 & carbonFootprint >= 3501){
+              document.getElementById("resultimage").src = "https://i.postimg.cc/pdr7H8jk/the-average-star-star.png"
+              document.getElementById("finalresult").innerText = "the average"
+              document.getElementById("resultdescription").innerText = `Interesting~~ Your carbon footprint is ${carbonFootprint/1000},pretty good, but you can do better!`
+             }else if (carbonFootprint <= 8000 & carbonFootprint >= 6001){
+              document.getElementById("resultimage").src = "https://i.postimg.cc/DZKqg37s/danger.png"
+              document.getElementById("finalresult").innerText = "danger zone"
+              document.getElementById("resultdescription").innerText = `Hey! Hey! Hey! Your carbon footprint is ${carbonFootprint/1000},you should start to reduce it now!`
+             }else{
+              document.getElementById("resultimage").src = "https://i.postimg.cc/8z9cRdTr/you-too-much.png"
+              document.getElementById("finalresult").innerText = "carbon monster"
+              document.getElementById("resultdescription").innerText = `Oof... Your carbon footprint is ${carbonFootprint/1000} tonne,I guess it is too much. Maybe you can follow our tips to reduce carbon footprint :)`
+             }
                 clearInterval(time)
               }
             }
