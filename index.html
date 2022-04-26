@@ -15,7 +15,7 @@
       <br>
       <img src="https://i.postimg.cc/Fsc1gyFT/intro-tree.png" id="introtree">
       <p id="questionmark"><b>Find out your carbon-personality!</b></p>
-      <p id="intdescription">what type of carbon personality are you? lets find out toghether!</p>
+      <p id="intdescription">Hi! Welcome to this simple carbon-personality quiz! We will calculate your carbon footprint and give you a cateragory/personality. Then, we will give you more personalized informations and tips to reduce your carbon footprint! Are you ready? Lets go!</p>
       <button id="letsgo" onclick="nextpage()">go!</button>
       <br>
       <br>
@@ -55,9 +55,7 @@
       function nextpage(){
     document.getElementById("demo").innerHTML= `<br><p id="prolotitle"><b>Prologue: orgin</b></p>
     <p id="prolodescription"> (scrool down if needed) The climate change occurs because of green house effect. Our atmosphere traps heat from sun. However, when human begin to pollute greenhouse gas, the atmosphere absorbs more heat and make the world warmer. This change in temperature will lead to climate change.</p>
-    <p id="prolodescription">However, by minimizing and monitoring our carbon footprint, we can slowdown cand stabalize limate change.
-
-Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhouse gas you produce. By monitoring it, you can know better about how can you reduce your carbon footprint.!</p>
+    <p id="prolodescription">Luckily, we got a tool that could help us. This tool is called "carbon footprint". Carbon footprint is a measure of the greenhouse gas you produce. By monitoring it, you can know better about how you can reduce your carbon footprint! By minimizing and monitoring our carbon footprint, we can slow down and stabilize climate change. </p>
     <br>
     <button class="nextgreenbutton" onclick="realgame()">➜</button>
     <br>
@@ -72,7 +70,7 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
 
     var electricUsage = 33
     var currentquestion = 0
-    const questions = ["what is your electric usage last month", "what is your energy usage last month","how many hour did you traveled (by plane) last month","how much water did you consume this month"]
+    const questions = ["how much electric did you use last month?", "how much energy did you use last month?","how many hour did you traveled (by plane) last month","how much water did you consume this month"]
     const description = ["please type in kwh","please use litter as unit","please use hour as unit","please use m3 as unit"]
     function realgame(){
         document.getElementById('demo').style.marginTop="30vh";
@@ -267,23 +265,23 @@ if (currentquestion >= 4){
 
              if (carbonFootprint <= 1000){
               document.getElementById("finalresult").innerText = "the carbon master"
-              document.getElementById("resultdescription").innerText = `OMG! Your carbon footprint is less than 1 tonne You must live a very enviroment friendly life! Your carbon footprint is way lower than the average! You can try to help people around you to realize the importance of climate action and help them to reduce their carbon footprint.`
+              document.getElementById("resultdescription").innerText = `OMG! Your carbon footprint is less than 1 tonne (${carbonFootprint/1000} tonne) You must live a very enviroment friendly life! Your carbon footprint is way lower than the average! You can try to help people around you to realize the importance of climate action and help them to reduce their carbon footprint.`
              } else if (carbonFootprint <= 3000 & carbonFootprint >= 1001){
               document.getElementById("resultimage").src = "https://i.postimg.cc/NFmktGbd/sword-level.png"
               document.getElementById("finalresult").innerText = "the carbon fighter"
-              document.getElementById("resultdescription").innerText = `Cool! Your carbon footprint is ${carbonFootprint/1000},good job! Keep it up! You can try to change your life habits to reduce your carbon footprint`
+              document.getElementById("resultdescription").innerText = `Cool! Your carbon footprint is ${carbonFootprint/1000},good job! Keep it up! You can try to change your life habits to reduce your carbon footprint, use this article to help you: shorturl.at/qCVY8`
              }else if (carbonFootprint <= 5000 & carbonFootprint >= 3500){
               document.getElementById("resultimage").src = "https://i.postimg.cc/pdr7H8jk/the-average-star-star.png"
               document.getElementById("finalresult").innerText = "the average"
-              document.getElementById("resultdescription").innerText = `Interesting~~ Your carbon footprint is ${carbonFootprint/1000},pretty good, but you can do better! Try to change your energy source and life habit!`
+              document.getElementById("resultdescription").innerText = `Interesting~~ Your carbon footprint is ${carbonFootprint/1000},pretty good, but you can do better! Try to change your energy source and life habit! Use this article to help you shorturl.at/qCVY8`
              }else if (carbonFootprint <= 5000 & carbonFootprint >= 3501){
               document.getElementById("resultimage").src = "https://i.postimg.cc/DZKqg37s/danger.png"
               document.getElementById("finalresult").innerText = "danger zone"
-              document.getElementById("resultdescription").innerText = `Hey! Hey! Hey! Your carbon footprint is ${carbonFootprint/1000},you should start to reduce it now! Try to change your energy source and life habit! `
+              document.getElementById("resultdescription").innerText = `Hey! Hey! Hey! Your carbon footprint is ${carbonFootprint/1000},you should start to reduce it now! Try to change your energy source and life habit! Use this article to help you shorturl.at/qCVY8`
              }else{
               document.getElementById("resultimage").src = "https://i.postimg.cc/8z9cRdTr/you-too-much.png"
               document.getElementById("finalresult").innerText = "carbon monster"
-              document.getElementById("resultdescription").innerText = `Oof... Your carbon footprint is ${carbonFootprint/1000} tonne,I guess it is too much. You should learn about the importance of climate action, reduce the use of transportation and change your energy source`
+              document.getElementById("resultdescription").innerText = `Oof... Your carbon footprint is ${carbonFootprint/1000} tonne,I guess it is too much. You should learn about the importance of climate action, reduce the use of transportation and change your energy source, please use this article to help you shorturl.at/qCVY8`
              }
                 clearInterval(time)
               }
