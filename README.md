@@ -8,3 +8,5 @@ Hello, I'm happy that you found this introduction, now I will introduce this gam
 
 ## how to use this
 The first and second page (introduction) is not important, if you already know things related to carbon footprint, just skip it
+Input your data according to the question in the 3,4,5,6 page
+Then you wil see you results :)
