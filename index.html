@@ -111,13 +111,13 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
       var travelUsage = 0
       var second = 5
       var waterUsage = 0
+      var nothing = false
       function nextquestion(){
-
         if( document.myForm.inputer.value == "" ) {
-            alert( "Please write something" );
-            return false;
+            nothing = true
+        }else{
+          nothing = false
         }
-
         if (currentquestion == 0){
           electricUsage = document.getElementById('answerinput').value
           fuelType = document.getElementById('fueltype').value
@@ -185,7 +185,7 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
             <div id="selection">
             </div>
             <input type="number" placeholder="random description" id="answerinput" name="inputer"></input>
-            <input id="nextbutton" onclick="nextquestion()" type="submit" value="done">
+            <button id="nextbutton" onclick="nextquestion()" type="submit">done</button>
             <p id="warning"></p>
             <br>
             <br>
@@ -194,7 +194,11 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
         <br>
         <br>
         <br>`
-        currentquestion = currentquestion + 1
+        currentquestion = currentquestion + 1       
+                if(nothing == true) {
+            alert( "Please write something" );
+                  currentquestion = currentquestion - 1
+        }
         document.getElementById('questiondescription').innerHTML = questions[currentquestion]
         document.getElementById('answerinput').placeholder = description[currentquestion]
         document.getElementById('questiontitle').innerHTML = "Q" + (currentquestion+1)
@@ -206,6 +210,14 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
                 <option value="diesel">diesel</option>
                 <option value="oil">oil</option>
                 <option value="kerosene">kerosene</option>
+           </select>`
+       }
+
+       if (currentquestion == 0){
+        document.getElementById("selection").innerHTML += `<select name="cars" id="fueltype">
+                <option value="Natural gas">Natural gas</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Coal">Coal</option>
            </select>`
        }
 
