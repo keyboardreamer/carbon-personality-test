@@ -83,7 +83,7 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
         <form name="myForm">
             <div id="selection"></div>
             <input type="number" placeholder="random description" id="answerinput" name="inputer"></input>
-            <input id="nextbutton" onclick="nextquestion()" type="button" value="done">
+            <input id="nextbutton" onclick="nextquestion()" type="submit" value="done">
             <br>
             <br>
           </form>
@@ -135,40 +135,48 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
              }            
         } else if (currentquestion == 1){
           energyUsage = document.getElementById('answerinput').value
-          console.log("energy usage is " + energyUsage)
           energyType = document.getElementById('oiltype').value
-          console.log("energy type is " + energyType)
           if (energyType == "petrol"){
                carbonFootprint += energyUsage * 2.3
+               console.log("energy type is " + energyType)
+               console.log("energy usage is" + energyUsage)
               console.log("carbon footprint is" + carbonFootprint)
              }else if (energyType == "gasoline"){
                carbonFootprint += energyUsage * 2.3
+               console.log("energy type is " + energyType)
+               console.log("energy usage is" + energyUsage)
                console.log("carbon footprint is" + carbonFootprint)
              }else if (energyType == "diesel"){
               carbonFootprint += energyUsage * 2.7
+              console.log("energy type is " + energyType)
+              console.log("energy usage is" + energyUsage)
                console.log("carbon footprint is" + carbonFootprint)               
              }else if (energyType == "oil"){
               carbonFootprint += energyUsage * 3
+              console.log("energy type is " + energyType)
+              console.log("energy usage is" + energyUsage)
                console.log("carbon footprint is" + carbonFootprint)                  
              }else{
               carbonFootprint += energyUsage * 2.4
+              console.log("energy type is " + energyType)
+              console.log("energy usage is" + energyUsage)
                console.log("carbon footprint is" + carbonFootprint)                   
              }
         } else if (currentquestion == 2){
           planeUsage = document.getElementById('answerinput').value
               carbonFootprint += planeUsage * 90 
+              console.log("plane usage is" + planeUsage)
               console.log("carbon footprint is" + carbonFootprint)       
              }else if(currentquestion == 3){
               waterUsage = document.getElementById('answerinput').value
               carbonFootprint += waterUsage * 4
+              console.log("water usage is" + waterUsage)   
               console.log("carbon footprint is" + carbonFootprint) 
              }
 
 
   
 
-
-        /*we need some animation here*/
         document.getElementById("demo").innerHTML= `
         <br>
         <h1 id="questiontitle">Q1</h1>
@@ -177,7 +185,7 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
             <div id="selection">
             </div>
             <input type="number" placeholder="random description" id="answerinput" name="inputer"></input>
-            <input type="button" id="nextbutton" onclick="nextquestion()" value="done" >
+            <input id="nextbutton" onclick="nextquestion()" type="submit" value="done">
             <p id="warning"></p>
             <br>
             <br>
@@ -186,7 +194,6 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
         <br>
         <br>
         <br>`
-
         currentquestion = currentquestion + 1
         document.getElementById('questiondescription').innerHTML = questions[currentquestion]
         document.getElementById('answerinput').placeholder = description[currentquestion]
@@ -201,6 +208,7 @@ Hold on, what is carbon footprint? Carbon footprint is a measure of the greenhou
                 <option value="kerosene">kerosene</option>
            </select>`
        }
+
 
 
 
@@ -357,7 +365,6 @@ if (currentquestion >= 4){
 
 
 
-
 #resultdescription{
   text-align: center;
   margin-left: 5%;
@@ -493,6 +500,7 @@ ul li:nth-child(3){
   margin-left: 5vw;
   border-radius: 24px;
   border: 2px aquamarine solid;
+  background-color: #FFFFFF;
 }
 
 #fueltype{
@@ -500,6 +508,7 @@ ul li:nth-child(3){
   border-radius: 24px;
   border: 2px aquamarine solid;
   margin-top: 3px;
+  background-color: #FFFFFF;
 }
 
 
