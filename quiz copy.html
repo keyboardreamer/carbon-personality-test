@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+  <head>
+    <meta name="viewport" content="width=div" initial scale="1.0">
+    <title>test your carbon personaity!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://i.postimg.cc/2j45LnVT/themoonlogo.png">
+    <script src="https://kit.fontawesome.com/96231852ed.js" crossorigin="anonymous"></script>
+  </head>
+  <body id="body">
+  <div id="hover">
+    <div class="container" id="demo">
+      <br>
+      <img src="https://i.postimg.cc/Fsc1gyFT/intro-tree.png" id="introtree">
+      <p id="questionmark"><b>Find out your carbon-personality!</b></p>
+      <p id="intdescription">Hi! Welcome to this simple carbon-personality quiz! We will calculate your carbon footprint and give you a cateragory/personality. Then, we will give you more personalized informations and tips to reduce your carbon footprint! Are you ready? Lets go!</p>
+      <button id="letsgo" onclick="nextpage()">go!</button>
+      <br>
+      <br>
+      <br>
+    </div>
+
+    <div id="share">
+      <button id="sharetwitter" onclick="location.href='https://twitter.com/intent/tweet?url=https%3A%2F%2Fkeyboardreamer.github.io%2Fcarbon-personality-test%2F'";>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </button>
+      <button id="sharefacebook" onclick="location.href='https://www.facebook.com/sharer/sharer.php?u=https://keyboardreamer.github.io/carbon-personality-test&quote=Awesome%20Blog!'";>
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </button>
+      <button id="sharewhatsapp" onclick="location.href='https://wa.me/?text=this%20website%20is%20cool%20https%3A%2F%2Fkeyboardreamer.github.io%2Fcarbon-personality-test%2F'";>
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+      </button>
+      <p id="creditname">Music by Darnu and Image by Pressart.vip</p>
+      <p id="authorname">Naffis</p>
+      <a href="quiz copy chinese.html" id = "chineselink">中文版</a>
+    </div>
+
+  </div>
+    
+<audio id="playthemusic">
+  <source src="hihigh.mp3">
+</audio>
+
+
+
+
+
+
+
+
+
+    <script>
+
+var page = [`      <br>
+      <img src="https://i.postimg.cc/Fsc1gyFT/intro-tree.png" id="introtree">
+      <p id="questionmark"><b>Find out your carbon-personality!</b></p>
+      <p id="intdescription">Hi! Welcome to this simple carbon-personality quiz! We will calculate your carbon footprint and give you a cateragory/personality. Then, we will give you more personalized informations and tips to reduce your carbon footprint! Are you ready? Lets go!</p>
+      <button id="letsgo" onclick="nextpage()">go!</button>
+      <br>
+      <br>
+      <br>`, `<br><p id="prolotitle"><b>Prologue: orgin</b></p>
+    <p id="prolodescription"> (scrool down if needed) The climate change occurs because of green house effect. Our atmosphere traps heat from sun. However, when human begin to pollute greenhouse gas, the atmosphere absorbs more heat and make the world warmer. This change in temperature will lead to climate change.</p>
+    <img id="proloimg" src="https://i.postimg.cc/7PJfh4MH/ghg-explianed.gif">
+    <br>
+    <button class="nextgreenbutton" onclick="nextpage()">➜</button>
+    <br>
+    <br>
+    <br>
+    `,`<br><p id="prolotitle"><b>Prologue: orgin</b></p>
+    <p id="prolodescription">Luckily, we got a tool that could help us. This tool is called "carbon footprint". Carbon footprint is a measure of the greenhouse gas you produce. By monitoring it, you can know better about how you can reduce your carbon footprint! By minimizing and monitoring our carbon footprint, we can slow down and stabilize climate change. </p>
+    <img src="https://i.postimg.cc/59pbfkD4/loonathedlrow.png" id="proloimg">
+    <br>
+      <button class="nextgreenbutton" onclick="realgame()">➜</button>
+    <br>
+    <br>
+    <br>
+    `,`
+        <br>
+        <h1 id="questiontitle">Q1</h1>
+        <p id="questiondescription">Random question</p>
+        <form name="myForm">
+            <div id="selection"></div>
+            <input type="number" placeholder="random description" id="answerinput" name="inputer"></input>
+            <input id="nextbutton" onclick="nextquestion()" type="submit" value="done">
+            <br>
+            <br>
+          </form>
+        <br>
+        <br>
+        <br>
+        <br`]
+
+    var pagenum = 0
+
+      function nextpage(){
+        pagenum += 1
+        document.getElementById("demo").innerHTML= page[pagenum]
+        music = document.getElementById("playthemusic")
+        music.play()
+      }
+
+//=====================================================================================================================================================
+
+    var electricUsage = 33
+    var currentquestion = 0
+    const questions = ["how much electric did you use last month? ⚡⚡", "how much energy did you use last month? 🔋🔋","how many hour did you traveled (by plane) last month ✈️✈️","how much water did you consume this month💦💦"]
+
+    const description = ["please type in kwh","please use litter as unit","please use hour as unit","please use m3 as unit"]
+    function realgame(){
+        document.getElementById('demo').style.marginTop="30vh";
+        document.getElementById("demo").innerHTML= `
+        <br>
+        <h1 id="questiontitle">Q1</h1>
+        <p id="questiondescription">Random question</p>
+        <form name="myForm">
+            <div id="selection"></div>
+            <input type="number" placeholder="random description" id="answerinput" name="inputer"></input>
+            <input id="nextbutton" onclick="nextquestion()" type="submit" value="done">
+            <br>
+            <br>
+          </form>
+        <br>
+        <br>
+        <br>
+        <br>`
+
+        document.getElementById("selection").innerHTML += `<select name="cars" id="fueltype">
+                <option value="Natural gas">Natural gas</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Coal">Coal</option>
+           </select>`
+        document.getElementById('questiondescription').innerHTML = questions[0]
+        document.getElementById('questiontitle').innerHTML = "Q1"
+        document.getElementById('answerinput').placeholder = description[currentquestion]
+        }
+
+
+
+      var electricUsage = 0
+      var energyUsage = 0
+      var carbonFootprint = 0
+      var energyType = 0
+      var travelUsage = 0
+      var second = 5
+      var waterUsage = 0
+      var nothing = false
+      function nextquestion(){
+        if( document.myForm.inputer.value == "" ) {
+            nothing = true
+        }else{
+          nothing = false
+        }
+        if (currentquestion == 0){
+          electricUsage = document.getElementById('answerinput').value
+          fuelType = document.getElementById('fueltype').value
+          console.log("electric usage is " + electricUsage)
+          console.log("electric type is " + fuelType)
+          if (fuelType == "Petrol"){
+               carbonFootprint += electricUsage * 0.96
+               console.log("carbon footprint is" + carbonFootprint)
+         }else if (fuelType == "Coal"){
+               carbonFootprint += electricUsage * 1.01
+               console.log("carbon footprint is" + carbonFootprint)
+             }else if (fuelType == "Natural gas"){
+              carbonFootprint += electricUsage * 0.75
+               console.log("carbon footprint is" + carbonFootprint)
+             }            
+        } else if (currentquestion == 1){
+          energyUsage = document.getElementById('answerinput').value
+          energyType = document.getElementById('oiltype').value
+          if (energyType == "petrol"){
+               carbonFootprint += energyUsage * 2.3
+               console.log("energy type is " + energyType)
+               console.log("energy usage is" + energyUsage)
+              console.log("carbon footprint is" + carbonFootprint)
+             }else if (energyType == "gasoline"){
+               carbonFootprint += energyUsage * 2.3
+               console.log("energy type is " + energyType)
+               console.log("energy usage is" + energyUsage)
+               console.log("carbon footprint is" + carbonFootprint)
+             }else if (energyType == "diesel"){
+              carbonFootprint += energyUsage * 2.7
+              console.log("energy type is " + energyType)
+              console.log("energy usage is" + energyUsage)
+               console.log("carbon footprint is" + carbonFootprint)               
+             }else if (energyType == "oil"){
+              carbonFootprint += energyUsage * 3
+              console.log("energy type is " + energyType)
+              console.log("energy usage is" + energyUsage)
+               console.log("carbon footprint is" + carbonFootprint)                  
+             }else{
+              carbonFootprint += energyUsage * 2.4
+              console.log("energy type is " + energyType)
+              console.log("energy usage is" + energyUsage)
+               console.log("carbon footprint is" + carbonFootprint)                   
+             }
+        } else if (currentquestion == 2){
+          planeUsage = document.getElementById('answerinput').value
+              carbonFootprint += planeUsage * 90 
+              console.log("plane usage is" + planeUsage)
+              console.log("carbon footprint is" + carbonFootprint)       
+             }else if(currentquestion == 3){
+              waterUsage = document.getElementById('answerinput').value
+              carbonFootprint += waterUsage * 4
+              console.log("water usage is" + waterUsage)   
+              console.log("carbon footprint is" + carbonFootprint) 
+             }
+
+
+  
+
+        document.getElementById("demo").innerHTML= `
+        <br>
+        <h1 id="questiontitle">Q1</h1>
+        <p id="questiondescription">Random question</p>
+        <form name="myForm">
+            <div id="selection">
+            </div>
+            <input type="number" placeholder="random description" id="answerinput" name="inputer"></input>
+            <button id="nextbutton" onclick="nextquestion()" type="submit">done</button>
+            <p id="warning"></p>
+            <br>
+            <br>
+          </form>
+        <br>
+        <br>
+        <br>
+        <br>`
+        currentquestion = currentquestion + 1       
+                if(nothing == true) {
+            alert( "Please write something" );
+                  currentquestion = currentquestion - 1
+        }
+        document.getElementById('questiondescription').innerHTML = questions[currentquestion]
+        document.getElementById('answerinput').placeholder = description[currentquestion]
+        document.getElementById('questiontitle').innerHTML = "Q" + (currentquestion+1)
+
+        if (currentquestion == 1){
+          document.getElementById("selection").innerHTML += `<select name="cars" id="oiltype">
+                <option value="petrol">petrol</option>
+                <option value="gasoline">gasoline</option>
+                <option value="diesel">diesel</option>
+                <option value="oil">oil</option>
+                <option value="kerosene">kerosene</option>
+           </select>`
+       }
+
+       if (currentquestion == 0){
+        document.getElementById("selection").innerHTML += `<select name="cars" id="fueltype">
+                <option value="Natural gas">Natural gas</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Coal">Coal</option>
+           </select>`
+       }
+
+
+
+
+
+
+
+
+
+
+
+//===============================================================================================================================================
+
+if (currentquestion >= 4){
+       console.log("carbon footprint is " + carbonFootprint/1000 + "tonne")
+        document.getElementById("demo").innerHTML= `
+        <ul id="loadingcontainer">
+          <li class="loadingcircles"></li>
+          &nbsp
+          <li class="loadingcircles"></li>
+          &nbsp
+          <li class="loadingcircles"></li>
+          &nbsp
+        </ul>`
+        document.getElementById("demo").style.backgroundColor="rgb(238, 246, 239)"
+        document.getElementById("demo").style.boxShadow="none"
+          var time = setInterval(
+            function animation(){
+              second = second - 1
+
+//===============================================================================================================================================
+
+              if (second <= 0){
+                document.getElementById("demo").style= `    width:50vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-left: 25vw;
+    border-radius: 5%;
+    box-shadow: 0px 0px 29px 0px rgb(0, 0, 0,0.1);
+    padding-bottom:5vh;
+    margin-top: 17.5vh;`
+
+                document.getElementById("demo").innerHTML= `
+          <br>
+          <img id="resultimage" src="diamond.png">
+          <h3 id="finalresult"></h3>
+          <p id="resultdescription">a random description is like thisLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <button class="resultnextbutton" onclick="thetippage()" type="submit">➜</button>
+          <br>
+            `
+
+             if (carbonFootprint <= 1000){
+              document.getElementById("finalresult").innerText = "the carbon master"
+              document.getElementById("resultdescription").innerText = `OMG! Your carbon footprint is less than 1 tonne (${carbonFootprint/1000} tonne) You must live a very enviroment friendly life! Your carbon footprint is way lower than the average! You can try to help people around you to realize the importance of climate action and help them to reduce their carbon footprint.`
+             } else if (carbonFootprint <= 3000 & carbonFootprint >= 1001){
+              document.getElementById("resultimage").src = "sword.png"
+              document.getElementById("finalresult").innerText = "the carbon fighter"
+              document.getElementById("resultdescription").innerText = `Cool! Your carbon footprint is ${carbonFootprint/1000},good job! Keep it up! You can try to change your life habits to reduce your carbon footprint, use this article to help you: shorturl.at/qCVY8`
+             }else if (carbonFootprint <= 5000 & carbonFootprint >= 3500){
+              document.getElementById("resultimage").src = "goldmedal.png"
+              document.getElementById("finalresult").innerText = "the average"
+              document.getElementById("resultdescription").innerText = `Interesting~~ Your carbon footprint is ${carbonFootprint/1000},pretty good, but you can do better! Try to change your energy source and life habit! Use this article to help you shorturl.at/qCVY8`
+             }else if (carbonFootprint <= 5000 & carbonFootprint >= 3501){
+              document.getElementById("resultimage").src = "bad.png"
+              document.getElementById("finalresult").innerText = "danger zone"
+              document.getElementById("resultdescription").innerText = `Hey! Hey! Hey! Your carbon footprint is ${carbonFootprint/1000},you should start to reduce it now! Try to change your energy source and life habit! Use this article to help you shorturl.at/qCVY8`
+             }else{
+              document.getElementById("resultimage").src = "warn.png"
+              document.getElementById("resultimage").style.width = "auto"
+              document.getElementById("finalresult").innerText = "carbon monster"
+              document.getElementById("resultdescription").innerText = `Oof... Your carbon footprint is ${carbonFootprint/1000} tonne,I guess it is too much. You should learn about the importance of climate action, reduce the use of transportation and change your energy source, please use this article to help you shorturl.at/qCVY8`
+             }
+                clearInterval(time)
+              }
+            }
+          ,1000)
+      }          
+        }
+
+
+//===============================================================================================================================================================================================================================
+
+      function thetippage(){
+        document.getElementById("demo").innerHTML=`
+        <br>
+        <br>
+        <h3 id="tiptitle" style="text-align:center;">tips</h3>
+        <p id="tipdescription" style="text-align:center;margin-left:2vw;margin-right:2vw;">according to your carbon footprint, we reccomend you to</p>
+        <ul style="margin-left:2vw;">
+          <li>tip 1</li>
+          <li>tip 2</li>
+          <li>tip 3</li>
+        </ul>`
+        document.getElementById('demo').style.marginTop="30vh";
+      }
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <style>
+
+      body{
+    background-image:url("https://pressstart.vip/images/uploads/assets/graveyard.png");
+    color:rgb(255, 255, 255);
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    height:100;
+    }
+
+    .container{
+    width:50vw;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-left: 25vw;
+    border-radius: 5%;
+    box-shadow: 0px 0px 29px 0px rgb(0, 0, 0,0.1);
+    margin-top: 17.5vh;
+    }
+
+
+button{
+  color:white;
+}
+
+
+
+    #sharetwitter{
+  border:0;
+  background: none;
+  position: absolute;
+  bottom: 5vh;
+  right:50px;
+}
+
+#sharefacebook{
+  border:0;
+  background: none;
+  position: absolute;
+  bottom: 5vh;
+  right:80px;
+}
+
+#sharewhatsapp{
+  border:0;
+  background:none;
+  position: absolute;
+  bottom: 5vh;
+  right:110px;
+}
+
+#authorname{
+  position: absolute;
+  bottom: 3vh;
+  right:150px;
+}
+
+#creditname{
+  position: absolute;
+  bottom: 3vh;
+  right:210px;
+}
+
+#chineselink{
+  left:50px;
+  bottom:3vh;
+  position: absolute;
+  color:white;
+  text-decoration: none;
+}
+
+
+
+#resultdescription{
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 1wh;
+}
+
+#resultimage{
+     display: block;
+     width:10vw;
+     height:10vw;
+     margin-left:auto;
+     margin-right: auto;
+    }
+
+#finalresult{
+  text-align: center;
+}
+
+.resultnextbutton{
+  float: right;
+  height:40px;
+  width:40px;
+  margin-top: 50px;
+  background: #787de1;
+  border:0;
+  border-radius: 100px;
+}
+
+.resultnextbutton:hover{
+  float: right;
+  height:40px;
+  width:40px;
+  margin-top: 50px;
+  background: #878dff;
+  border:0;
+  border-radius: 100px;
+}
+
+
+
+
+    
+#loadingcontainer{
+      position: absolute;
+      left: 47%;
+      top:40%;
+      transform:rotate(90deg);
+      padding-bottom: 5px;
+}
+
+.loadingcircles{
+  list-style: none;
+  width:15px;
+  height:15px;
+  border-radius: 100%;
+  background-color: #878dff;
+  animation:loadinganimation 1.4s linear infinite;
+  margin-block-start: 0%;
+}
+
+@keyframes loadinganimation{
+  0%{
+    transform:translateX(0);
+  }
+
+  60%{
+    transform:translateX(0);
+  }
+
+  80%{
+    transform:translateX(-10px);
+  }
+}
+
+ul li:nth-child(1){
+  animation-delay: 0s;
+}
+
+ul li:nth-child(2){
+  animation-delay: 0.2s;
+}
+
+ul li:nth-child(3){
+  animation-delay: 0.4s;
+}
+
+
+#share button{
+  color:white
+}
+
+
+
+#questiontitle{
+  text-align: center;
+}
+
+#nextbutton{
+  float: right;
+  height:4vh;
+  width:6vh;
+  margin-right: 5vw;
+  margin-top: 3vh;
+  background: #787de1;
+  border:0;
+  border-radius: 5px;
+}
+
+#nextbutton:hover{
+  float: right;
+  margin-right: 5vw;
+  margin-top: 3vh;
+  background: #878dff;
+}
+
+#answerinput{
+  margin-left: 5vw;
+  margin-right: 5vw;
+  width:40vw;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px #787de1 solid;
+  padding: 3px 2px;
+  margin-top: 10px;
+}
+
+#questiondescription{
+  margin-left: 2vw;
+  text-align: center;
+}
+
+
+#oiltype{
+  margin-left: 5vw;
+  border-radius: 24px;
+  border: 2px #787de1 solid;
+  background-color: #FFFFFF;
+}
+
+#fueltype{
+  margin-left: 5vw;
+  border-radius: 24px;
+  border: 2px #787de1 solid;
+  margin-top: 3px;
+  background-color: #FFFFFF;
+}
+
+
+.nextgreenbutton{
+    background: #878dff;
+    border:none;
+    width:5vh;
+    height:5vh;
+    position:relative;
+    color:rgb(255, 255, 255);
+    border-radius: 100%;
+    float: right;
+    margin-right: 3vw;
+}
+
+.nextgreenbutton:hover{
+    background:#787de1;
+    border:none;
+    width:5vh;
+    height:5vh;
+    position:relative;
+    color:rgb(255, 255, 255);
+    border-radius: 100%;  
+}
+
+#proloimg{
+  width:20vw;
+  margin-left: 15vw;
+}
+#prolotitle{
+   text-align: center;
+   margin-top: 10vh;
+}
+
+#questionmark{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 2vh;
+}
+
+#prolodescription{
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#introtree{
+    width:10vh;
+    height:14vh;
+    margin-left:43%;
+    margin-top: 12vh;
+}
+
+#intdescription{
+    text-align: center;
+    margin-top: -2vh;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+
+#letsgo{
+    border:0;
+    border-radius: 5px;
+    height:5vh;
+    width:10vh;
+    background-color:#787de1;
+    margin-left: 43%;
+    margin-top: 2%;
+}
+
+#letsgo:hover{
+    border:0;
+    border-radius: 5px;
+    height:5vh;
+    width:10vh;
+    background-color:#878dff;
+    margin-left: 43%;
+    margin-top: 2%;   
+}
+    </style>
+  </body>
+</html>
